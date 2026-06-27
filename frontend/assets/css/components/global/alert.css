@@ -1,0 +1,103 @@
+.alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: 9999;
+  border-radius: 10px;
+  border: 1px solid var(--white);
+  max-width: 400px;
+  width: 100%;
+  background-color: var(--black-dark);
+  opacity: 0;
+  visibility: hidden;
+  color: var(--white);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.alert.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.alert .content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+}
+
+.alert .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.alert .icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+  pointer-events: none;
+}
+
+.alert .message {
+  flex: 1;
+  font-family: var(--light);
+  font-size: var(--f2);
+  line-height: 1.5;
+}
+
+.alert .close {
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.alert .close:hover {
+  background-color: var(--white-light);
+}
+
+.alert .close svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--white);
+}
+
+.alert.success {
+  border-color: var(--green);
+}
+
+.alert.success .icon {
+  background-color: var(--green);
+}
+
+.alert.error {
+  border-color: var(--red);
+}
+
+.alert.error .icon {
+  background-color: var(--red);
+}
+
+.alert.warning {
+  border-color: var(--orange);
+}
+
+.alert.warning .icon {
+  background-color: var(--orange);
+}

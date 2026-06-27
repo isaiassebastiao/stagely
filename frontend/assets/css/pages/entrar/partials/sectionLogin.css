@@ -1,0 +1,212 @@
+section.login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 80px 30px;
+  background: linear-gradient(-45deg, var(--violet), var(--purple-dark), var(--black-dark), var(--violet));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  overflow: hidden;
+}
+
+section.login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--login-overlay);
+  backdrop-filter: blur(16px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+section.login .logo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 150px;
+}
+
+section.login h1 {
+  position: relative;
+  z-index: 1;
+  margin: 20px 0;
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--white);
+  line-height: 1.5;
+}
+
+section.login form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+section.login form .field {
+  position: relative;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+section.login form .field .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+section.login form .field .icon::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1px;
+  height: 70%;
+  background-color: var(--grey-soft);
+}
+
+section.login form .field .icon svg {
+  width: 25px;
+  height: 25px;
+  fill: var(--white);
+  pointer-events: none;
+}
+
+section.login form .field .icon-eye {
+  position: absolute;
+  top: 30px;
+  left: auto;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+section.login form .field .icon-eye::after {
+  display: none;
+}
+
+section.login form .field .icon-eye svg {
+  fill: var(--grey-light);
+}
+
+section.login form .field .icon-eye.active svg {
+  fill: var(--white);
+}
+
+section.login form .field label {
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  font-size: var(--f1);
+  font-family: var(--light);
+  color: var(--grey-light);
+  pointer-events: none;
+}
+
+section.login form .field input {
+  width: 100%;
+  height: 80px;
+  padding: 30px 20px 0 100px;
+  font-size: var(--f2);
+  font-family: var(--semi-bold);
+  color: var(--white);
+  background-color: var(--black-dark);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+section.login form .field input::placeholder {
+  color: var(--white);
+  font-size: var(--f2);
+  font-family: var(--semi-bold);
+}
+
+section.login form button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  height: 60px;
+  margin: 20px 0 0 0;
+  background: linear-gradient(135deg, var(--violet), var(--login-button-base), var(--login-button-mid));
+  color: var(--white);
+  font-size: var(--f2);
+  font-family: var(--semi-bold);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+section.login form button:hover {
+  background: linear-gradient(135deg, var(--login-button-dark), var(--login-button-mid-hover), var(--login-button-light-hover));
+}
+
+section.login form button.loading {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+section.login form button.loading span {
+  opacity: 1;
+  visibility: visible;
+}
+
+section.login form button.loading p {
+  opacity: 0;
+  visibility: hidden;
+}
+
+section.login form button span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--white);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  animation: 1s spin infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

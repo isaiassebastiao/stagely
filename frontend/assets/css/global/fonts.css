@@ -1,0 +1,15 @@
+@font-face {
+  font-display: swap;
+  font-family: 'figtree-light';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../../fonts/figtree-light.woff) format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'figtree-semibold';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../../fonts/figtree-semibold.woff) format('woff');
+}

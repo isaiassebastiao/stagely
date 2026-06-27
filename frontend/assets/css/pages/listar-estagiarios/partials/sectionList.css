@@ -1,0 +1,448 @@
+section.list {
+  position: relative;
+  top: 60px;
+  left: 300px;
+  width: calc(100% - 300px);
+  min-height: calc(100vh - 60px);
+  padding: 30px;
+}
+
+section.list .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+section.list .header .search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.list .header .search-wrapper h3 {
+  margin: 0 10px 0 0;
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--white);
+}
+
+section.list .header .search-wrapper .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.list .header .search-wrapper .search .field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+section.list .header .search-wrapper .search .field input {
+  padding: 10px 40px;
+  height: 40px;
+  font-size: var(--f1);
+  font-family: var(--light);
+  color: var(--white);
+  background-color: var(--black-dark);
+  border-radius: 10px;
+}
+
+section.list .header .search-wrapper .search .field .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 100%;
+  pointer-events: none;
+}
+
+section.list svg {
+  width: 15px;
+  height: 15px;
+  fill: var(--white);
+}
+
+section.list .header .btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--white);
+  font-size: var(--f2);
+  font-family: var(--semi-bold);
+  border-radius: 10px;
+  border: 1px solid var(--grey-soft);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+section.list .header .btn:hover {
+  opacity: 0.8;
+}
+
+section.list .header .btn svg {
+  margin: 0 10px 0 0;
+}
+
+section.list table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+
+section.list table thead tr th {
+  background-color: var(--black-dark);
+}
+
+section.list table tr th,
+section.list table tr td {
+  text-align: left;
+  padding: 14px 14px;
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--white);
+}
+
+section.list table tr td {
+  transition: all 0.3s;
+}
+
+section.list table thead tr th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+section.list table thead tr th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+section.list table tbody tr td {
+  border-bottom: 1px solid var(--grey-soft);
+  vertical-align: middle;
+}
+
+section.list table tbody tr td .photo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+  background-color: var(--purple-dark);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--f1);
+  font-family: var(--light);
+  color: var(--violet);
+  margin-right: 10px;
+}
+
+section.list table tbody tr td .status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: var(--f1);
+  font-family: var(--light);
+  text-align: center;
+  width: fit-content;
+}
+
+section.list table tbody tr td .status.finished {
+  background-color: var(--green-dark);
+  border: 1px solid var(--green-bright);
+  color: var(--green-light);
+}
+
+section.list table tbody tr td .status.progress {
+  background-color: var(--blue-dark);
+  border: 1px solid var(--blue);
+  color: var(--blue-light);
+}
+
+section.list table tbody tr td .status.pending {
+  background-color: var(--orange-light);
+  border: 1px solid var(--orange);
+  color: var(--orange-muted);
+}
+
+section.list table tbody tr td svg {
+  cursor: pointer;
+}
+
+section.list .pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.list .pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  margin: 0 10px 0 0;
+  border-radius: 10px;
+  background-color: var(--black-dark);
+  color: var(--white);
+  font-family: var(--semi-bold);
+  font-size: var(--f2);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+section.list .pagination button:hover {
+  opacity: 0.8;
+}
+
+section.list .pagination button.active {
+  background-color: var(--violet);
+}
+
+section.list .header .filter {
+  position: relative;
+}
+
+section.list .header .filter .options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 190px;
+  margin: 10px 0 0 0;
+  padding: 5px 0;
+  background-color: var(--black-dark);
+  border-radius: 13px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+
+
+section.list .header .filter .options.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+section.list .header .filter .options .list {
+  max-height: 200px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+section.list .header .filter .options .list::-webkit-scrollbar {
+  display: none;
+}
+
+section.list .header .filter .options .list .item {
+  padding: 12px 18px;
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--grey-light);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+section.list .header .filter .options .list .item:hover {
+  color: var(--white);
+}
+
+section.list table tbody tr td .actions {
+  position: relative;
+}
+
+section.list table tbody tr td .actions .options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 5px 0 5px 0;
+  background-color: var(--black-dark);
+  border-radius: 13px;
+  min-width: 160px;
+  z-index: 10;
+  display: none;
+  transition: all 0.3s;
+}
+
+section.list table tbody tr td .actions button.open {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+section.list table tbody tr td .actions .options button {
+  background-color: transparent;
+}
+
+section.list table tbody tr td .actions .options .item {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+}
+
+section.list table tbody tr td .actions .options .item svg {
+  width: 16px;
+  height: 16px;
+  margin: 0 10px 0 0;
+  transition: all 0.3s;
+}
+
+section.list table tbody tr td .actions .options .item span {
+  color: var(--white);
+  font-size: var(--f2);
+  font-family: var(--light);
+  transition: all 0.3s;
+}
+
+section.list table tbody tr td .actions .options .item:hover span {
+  color: var(--violet);
+}
+
+section.list table tbody tr td .actions .options .item:hover svg {
+  fill: var(--violet);
+}
+
+section.list table tbody tr td .actions .options.active {
+  display: block;
+}
+
+section.list table tbody tr td .actions .options .item.delete {
+  border-top: 1px solid var(--red);
+}
+
+section.list table tbody tr td .actions .options .item.delete span {
+  color: var(--red);
+  transition: all 0.3s;
+}
+
+section.list table tbody tr td .actions .options .item.delete svg {
+  fill: var(--red);
+  transition: all 0.3s;
+}
+
+section.list table tbody tr td .actions .options .item.delete:hover span {
+  color: var(--white);
+}
+
+section.list table tbody tr td .actions .options .item.delete:hover svg {
+  fill: var(--white);
+}
+
+section.list table tbody tr.selected td:not(.status) {
+  color: var(--violet);
+}
+
+section.list table tbody tr.selected td .actions .open svg {
+  fill: var(--violet);
+}
+
+@media (max-width: 900px) {
+  section.list .header {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+
+  section.list .header .search-wrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  section.list .header .buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  section.list table thead {
+    display: none;
+  }
+
+  section.list table,
+  section.list table tbody,
+  section.list table tr,
+  section.list table td {
+    display: block;
+    width: 100%;
+  }
+
+  section.list table tr {
+    background-color: var(--black-dark);
+    margin-bottom: 16px;
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  section.list table #actions {
+    border: none;
+  }
+
+  section.list table td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  section.list table td::before {
+    content: attr(data-label);
+    color: #aaa;
+    font-size: 13px;
+  }
+
+  section.list table td[colspan] {
+    justify-content: center;
+    padding: 0;
+    border: none;
+  }
+
+  section.list table td > *:not(:first-child),
+  section.list table td > span,
+  section.list table td > div:last-child,
+  section.list table td > a {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  section.list table td {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  section.list table td::before {
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  section.list table td > *:last-child {
+    text-align: right;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 1040px) {
+  section.list {
+    top: 0;
+    left: 0;
+    margin-top: 115px;
+    width: 100%;
+    min-height: calc(100vh - 115px);
+    padding: 40px 30px;
+  }
+}

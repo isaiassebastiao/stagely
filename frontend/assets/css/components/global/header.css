@@ -1,0 +1,595 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 300px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 300px);
+  height: 60px;
+  padding: 0 30px;
+  border-bottom: 1px solid var(--grey-medium);
+  background-color: var(--black-strong);
+}
+
+header .screen {
+  display: flex;
+  align-items: center;
+  width: 160px;
+}
+
+header .screen .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--grey-soft);
+  border-radius: 10px;
+}
+
+header .screen .icon svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--white);
+}
+
+header .screen h3 {
+  margin: 0 0 0 10px;
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--white);
+}
+
+header .screen .screen-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+header .search .field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+header .search .field .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+header .search .field .icon::after {
+  position: absolute;
+  right: 0;
+  width: 1px;
+  height: 70%;
+  content: '';
+  background-color: var(--grey-soft);
+}
+
+header .search .field .icon svg {
+  width: 15px;
+  height: 15px;
+  fill: var(--white);
+}
+
+header .search .field input {
+  width: 100%;
+  height: 40px;
+  padding: 0 0 0 60px;
+  font-size: var(--f1);
+  font-family: var(--light);
+  color: var(--white);
+  background-color: var(--black-dark);
+  border-radius: 10px;
+}
+
+header .search .field input::placeholder {
+  color: var(--grey-light);
+}
+
+header .search .options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  min-width: 250px;
+  margin: 20px 0 0 0;
+  padding: 5px 0;
+  background-color: var(--black-dark);
+  border-radius: 10px;
+  z-index: 1000;
+  display: none;
+  transition: all 0.3s;
+}
+
+header .search .options.active {
+  display: block;
+}
+
+header .search .options .item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+header .search .options .item svg {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin: 0 12px 0 0;
+  fill: var(--violet);
+  transition: all 0.3s;
+}
+
+header .search .options .item span {
+  color: var(--white);
+  font-size: var(--f2);
+  font-family: var(--light);
+  transition: all 0.3s;
+}
+
+header .search .options .item:hover span {
+  color: var(--violet);
+}
+
+header .search .options h3 {
+  font-size: var(--f0);
+  font-family: var(--semi-bold);
+  color: var(--grey-light);
+  padding: 10px 15px 5px 15px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+header .search .options .no-results {
+  padding: 5px 15px;
+  text-align: left;
+  color: var(--grey-light);
+  font-size: var(--f2);
+  font-family: var(--light);
+}
+
+header .profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .profile button.open {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  height: 40px;
+  background-color: var(--black-dark);
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+header .profile button.open:hover {
+  background-color: var(--black-medium);
+}
+
+header .profile button.open svg {
+  width: 15px;
+  height: 15px;
+  margin: 0 0 0 15px;
+  fill: var(--white);
+  transition: transform 0.3s;
+}
+
+header .profile button.open.active svg {
+  transform: rotate(180deg);
+}
+
+header .profile button.open h4 {
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--white);
+  margin: 0 0 0 15px;
+}
+
+header .profile button.open .photoProfile {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  margin: 0 0 0 15px;
+}
+
+header .profile .options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 190px;
+  margin: 20px 0 0 0;
+  padding: 5px 0;
+  background-color: var(--black-dark);
+  border-radius: 10px;
+  z-index: 1000;
+  display: none;
+  transition: all 0.3s;
+}
+
+header .profile .options.active {
+  display: block;
+}
+
+header .profile .options .item {
+  width: 100%;
+  display: flex;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+header .profile .options .item svg {
+  width: 16px;
+  height: 16px;
+  margin: 0 10px 0 0;
+  fill: var(--white);
+  color: var(--white);
+  transition: all 0.3s;
+}
+
+header .profile .options .item span {
+  color: var(--white);
+  font-size: var(--f2);
+  font-family: var(--light);
+  transition: all 0.3s;
+}
+
+header .profile .options .item:hover span {
+  color: var(--violet);
+}
+
+header .profile .options .item:hover svg {
+  fill: var(--violet);
+  color: var(--violet);
+}
+
+header .profile .options .item.logout {
+  border-top: 1px solid var(--red-light);
+}
+
+header .profile .options .item.logout span {
+  color: var(--red-light);
+}
+
+header .profile .options .item.logout svg {
+  fill: var(--red-light);
+}
+
+header .profile .options .item.logout:hover span {
+  color: var(--white);
+}
+
+header .profile .options .item.logout:hover svg {
+  fill: var(--white);
+}
+
+header .profile .options h4 {
+  display: none;
+  font-size: var(--f1);
+  font-family: var(--semi-bold);
+  color: var(--grey-light);
+  padding: 12px 15px 5px 15px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+header .screen .menu-icons a img {
+  width: 30px;
+  height: 30px;
+  margin: 0 20px 0 0;
+  display: none;
+}
+
+header .search-and-profile {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+header .screen .menu-icons {
+  display: flex;
+  align-items: center;
+}
+
+header .screen .menu-icon-container {
+  display: none;
+}
+
+header .screen .menu-icon-container .menu-icon {
+  cursor: pointer;
+}
+
+header .screen .menu-icon-container .menu-icon svg {
+  width: 25px;
+  height: 25px;
+  fill: var(--white);
+}
+
+header .screen menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: var(--black-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+header .screen menu.menu-on {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+header .screen menu.menu-off {
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+header .screen menu .menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--overlay-08);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+header .screen menu .menu-header .menu-logo img {
+  width: 100px;
+  display: block;
+}
+
+header .screen menu .menu-header .close-menu-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+header .screen menu .menu-header .close-menu-icon:hover {
+  background-color: var(--overlay-08);
+}
+
+header .screen menu .menu-header .close-menu-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--white);
+  fill: none;
+}
+
+header .screen menu nav {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+header .screen menu nav a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 24px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--overlay-06);
+  transition: background-color 0.2s;
+}
+
+header .screen menu nav a:hover {
+  background-color: var(--overlay-04);
+}
+
+header .screen menu nav a svg.nav-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  fill: var(--white);
+  opacity: 0.75;
+}
+
+header .screen menu nav a p {
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--white);
+  margin: 0;
+}
+
+header .screen menu nav .dropdown {
+  width: 100%;
+}
+
+header .screen menu nav .dropdown button.open {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 24px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--overlay-06);
+  box-sizing: border-box;
+  transition: background-color 0.2s;
+}
+
+header .screen menu nav .dropdown button.open:hover {
+  background-color: var(--overlay-04);
+}
+
+header .screen menu nav .dropdown button.open .left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+header .screen menu nav .dropdown button.open .left svg.nav-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  fill: var(--white);
+  opacity: 0.75;
+}
+
+header .screen menu nav .dropdown button.open .left p {
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--white);
+  margin: 0;
+}
+
+header .screen menu nav .dropdown button.open svg.chevron-icon {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  fill: var(--white);
+  opacity: 0.45;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+  flex-shrink: 0;
+}
+
+header .screen menu nav .dropdown button.open.active svg.chevron-icon {
+  transform: rotate(180deg);
+  opacity: 0.9;
+}
+
+header .screen menu nav .dropdown .options {
+  display: none;
+  flex-direction: column;
+  background-color: var(--overlay-03);
+}
+
+header .screen menu nav .dropdown .options.active {
+  display: flex;
+}
+
+header .screen menu nav .dropdown .options a {
+  padding: 13px 24px 13px 58px;
+  border-bottom: 1px solid var(--overlay-04);
+  gap: 0;
+}
+
+header .screen menu nav .dropdown .options a p {
+  font-size: var(--f2);
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 1040px) {
+  #menu {
+    opacity: 0 !important;
+    transform: translateX(-100%) !important;
+    visibility: hidden !important;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  header {
+    height: 115px;
+    left: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 12px 30px;
+  }
+
+  header .screen {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  header .screen .menu-icons a img {
+    display: block;
+  }
+
+  header .screen .menu-icon-container {
+    display: block;
+  }
+
+  header .search {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+  }
+
+  header .search .field {
+    width: 100%;
+    min-width: 0;
+  }
+
+  header .profile {
+    flex-shrink: 0;
+  }
+
+  header .profile button.open h4 {
+    display: none;
+  }
+
+  header .profile .options h4 {
+    display: flex;
+  }
+
+  header .search-and-profile {
+    width: 100%;
+    margin-top: 10px;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

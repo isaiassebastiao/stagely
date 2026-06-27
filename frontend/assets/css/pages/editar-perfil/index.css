@@ -1,0 +1,5 @@
+@import url('../../global/global.css');
+@import url("../../components/global/alert.css");
+@import url('../../components/global/header.css');
+@import url('../../components/global/aside.css');
+@import url('../editar-perfil/partials/sectionUpdate.css');

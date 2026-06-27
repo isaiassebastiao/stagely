@@ -1,0 +1,46 @@
+# ============================
+# Standardize line endings
+# ============================
+* text=auto
+
+# Force text treatment for code files
+*.php text
+*.html text
+*.css text
+*.js text
+
+# Treat common text files as text
+*.md text
+*.txt text
+*.json text
+*.xml text
+*.csv text
+
+# ============================
+# Ignore diffs for minified files
+# ============================
+*.min.js -diff
+*.min.css -diff
+
+# ============================
+# Binary files (no diff)
+# ============================
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.mp4 binary
+
+# ============================
+# Merge strategies (optional)
+# ============================
+*.json merge=union
+
+# ============================
+# Export ignore (optional)
+# ============================
+README.md export-ignore
+.gitattributes export-ignore

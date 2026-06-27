@@ -1,0 +1,102 @@
+:root {
+  --violet: #7132f5;
+  --violet-dark: #5e28d1;
+  --purple-dark: #1f1c37;
+  --green: #10b981;
+  --green-bright: #1a4035;
+  --green-dark: #041d17;
+  --green-light: #4eeabc;
+  --red: #ef4444;
+  --red-light: #ff4649;
+  --red-neon: #f6bee7;
+  --red-bright: #52223e;
+  --red-dark: #420d2b;
+  --red-ice: #882e4320;
+  --vivid-orange: #f59e0b;
+  --orange: #382d16;
+  --orange-light: #201300;
+  --orange-muted: #f3df76;
+  --blue: #36335e;
+  --blue-dark: #191c45;
+  --blue-light: #b3c1ee;
+  --white: #ffffff;
+  --white-light: #ffffff1a;
+  --grey-lighter: #e8e8e8;
+  --grey-light: #8f8888;
+  --grey-soft: #98a4b326;
+  --grey-medium: #444444;
+  --black: #000000;
+  --black-dark: #18181b;
+  --black-medium: #161618;
+  --black-strong: #101013;
+  --login-overlay: rgba(10, 5, 30, 0.3);
+  --login-button-base: #7b52c7;
+  --login-button-mid: #9370db;
+  --login-button-dark: #6b2fff;
+  --login-button-mid-hover: #8c52ff;
+  --login-button-light-hover: #c084ff;
+
+  --overlay-03: rgba(255, 255, 255, 0.03);
+  --overlay-04: rgba(255, 255, 255, 0.04);
+  --overlay-06: rgba(255, 255, 255, 0.06);
+  --overlay-08: rgba(255, 255, 255, 0.08);
+
+  --light: figtree-light;
+  --semi-bold: figtree-semibold;
+
+  --f0: clamp(0.5rem, 1vw, 0.7rem);
+  --f1: clamp(0.6rem, 1vw, 0.8rem);
+  --f2: clamp(0.8rem, 1vw, 1.1rem);
+  --f3: clamp(1.1rem, 1vw, 1.3rem);
+  --f4: clamp(1.3rem, 1vw, 1.5rem);
+  --f5: clamp(1.5rem, 1vw, 1.7rem);
+  --f6: clamp(1.7rem, 1vw, 1.9rem);
+  --f7: clamp(1.9rem, 1vw, 2.1rem);
+  --f8: clamp(2.1rem, 1vw, 2.5rem);
+  --f9: clamp(2.5rem, 1vw, 2.7rem);
+  --f10: clamp(2.7rem, 1vw, 3rem);
+  --f11: clamp(4.5rem, 1vw, 5rem);
+}
+
+/* Light Mode */
+:root[data-theme='light'] {
+  --violet: #7132f5;
+  --violet-dark: #5e28d1;
+  --purple-dark: #e0c8f9;
+  --green: #10b981;
+  --green-bright: #0ce16f;
+  --green-dark: #dcfce7;
+  --green-light: #10c062;
+  --red: #ef4444;
+  --red-neon: #ff4649;
+  --red-bright: #e10c0c;
+  --red-dark: #fee2e2;
+  --red-ice: #e4164620;
+  --orange: #f59e0b;
+  --orange-light: #fef3c7;
+  --orange-muted: #b45309;
+  --blue: #3b82f6;
+  --blue-dark: #d1dbfc;
+  --blue-light: #3883e4;
+  --white: #000000;
+  --white-light: #00000008;
+  --grey-lighter: #1a1a1a;
+  --grey-light: #666666;
+  --grey-soft: #e5e7eb;
+  --grey-medium: #bbbbbb;
+  --black: #ffffff;
+  --black-dark: #f2f3f5;
+  --black-medium: #e5e7eb;
+  --black-strong: #f9fafb;
+  --login-overlay: rgba(240, 235, 250, 0.3);
+  --login-button-base: #8b63d9;
+  --login-button-mid: #a885e8;
+  --login-button-dark: #7b52c7;
+  --login-button-mid-hover: #9d77f0;
+  --login-button-light-hover: #b399ff;
+
+  --overlay-03: rgba(0, 0, 0, 0.03);
+  --overlay-04: rgba(0, 0, 0, 0.04);
+  --overlay-06: rgba(0, 0, 0, 0.06);
+  --overlay-08: rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,425 @@
+section.dashboard {
+  position: relative;
+  top: 60px;
+  left: 300px;
+  width: calc(100% - 300px);
+  min-height: calc(100vh - 60px);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+section.dashboard .welcome {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+section.dashboard .welcome .content {
+  max-width: 60%;
+}
+
+section.dashboard .welcome .content h2 {
+  font-family: var(--semi-bold);
+  font-size: var(--f3);
+  color: var(--white);
+}
+
+section.dashboard .welcome .content p {
+  margin-top: 8px;
+  font-size: var(--f1);
+  color: var(--grey-lighter);
+  font-family: var(--light);
+}
+
+section.dashboard .select {
+  position: relative;
+}
+
+section.dashboard .welcome .select .selected {
+  width: 100%;
+  border: 1px solid var(--grey-soft);
+  transition: all 0.3s;
+}
+
+section.dashboard .welcome .select .selected:hover {
+  opacity: 0.8;
+}
+
+section.dashboard .select .selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  min-height: 40px;
+  overflow: hidden;
+  padding: 0 18px;
+  color: var(--grey-light);
+  background-color: var(--black-dark);
+  font-size: var(--f2);
+  font-family: var(--light);
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+section.dashboard .select .selected.filled .text {
+  color: var(--white);
+}
+
+section.dashboard .select .selected svg {
+  width: 15px;
+  height: 15px;
+  fill: var(--grey-light);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+section.dashboard .select .selected.active svg {
+  transform: rotate(180deg);
+}
+
+section.dashboard .select .options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin: 5px 0 0 0;
+  background-color: var(--black-dark);
+  border-radius: 10px;
+  z-index: 100;
+  display: none;
+}
+
+section.dashboard .select .options.active {
+  display: block;
+}
+
+section.dashboard .select .options .search {
+  padding: 10px;
+  position: relative;
+}
+
+section.dashboard .select .options .search input {
+  width: 100%;
+  height: 40px;
+  padding: 10px 10px 10px 26px;
+  border-radius: 13px;
+  background-color: var(--black-strong);
+  color: var(--white);
+  font-size: var(--f1);
+  font-family: var(--light);
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+section.dashboard .select .options .search input::placeholder {
+  color: var(--grey-light);
+}
+
+section.dashboard .select .options .search svg {
+  position: absolute;
+  left: 18px;
+  top: 24px;
+  width: 12px;
+  height: 12px;
+  fill: var(--grey-light);
+  pointer-events: none;
+}
+
+section.dashboard .select .options .list {
+  max-height: 120px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+section.dashboard .select .options .list::-webkit-scrollbar {
+  display: none;
+}
+
+section.dashboard .select .options .list .item {
+  padding: 12px 18px;
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--grey-light);
+  cursor: pointer;
+}
+
+section.dashboard .select .options .list .item:hover {
+  color: var(--white);
+}
+
+section.dashboard .select .options .list .no-results {
+  padding: 12px 18px;
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--grey-light);
+  cursor: default;
+  user-select: none;
+}
+
+section.dashboard .statistic {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+section.dashboard .statistic .stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+section.dashboard .statistic .stats .stat {
+  display: flex;
+  gap: 15px;
+  background-color: var(--black-strong);
+  border: 1px solid var(--grey-soft);
+  border-radius: 18px;
+  padding: 14px;
+  flex: 0 1 calc(25% - 15px);
+  width: calc(25% - 15px);
+  min-width: 220px;
+  max-width: calc(25% - 15px);
+}
+
+section.dashboard .statistic .stats .stat .icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--black-dark);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+section.dashboard .statistic .stats .stat .icon svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--white);
+}
+
+section.dashboard .statistic .stats .stat .info span {
+  font-size: var(--f1);
+  font-family: var(--light);
+  color: var(--grey-lighter);
+}
+
+section.dashboard .statistic .stats .stat .info h4 {
+  display: block;
+  margin-top: 5px;
+  font-size: var(--f3);
+  font-family: var(--semi-bold);
+  color: var(--white);
+}
+
+section.dashboard .statistic .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+section.dashboard .statistic .cards .card {
+  flex: 1;
+  min-width: 250px;
+  background-color: var(--black-strong);
+  border: 1px solid var(--grey-soft);
+  border-radius: 18px;
+  padding: 14px;
+}
+
+section.dashboard .statistic .cards .card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section.dashboard .statistic .cards .card .card-header h3 {
+  margin: 0 0 20px;
+  font-size: var(--f2);
+  font-family: var(--semi-bold);
+  color: var(--white);
+}
+
+section.dashboard .statistic .cards .card .chart-area {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  align-items: center;
+  gap: 25px;
+}
+
+section.dashboard .statistic .cards .card .chart-area .chart-box {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: auto;
+}
+
+section.dashboard .statistic .cards .card .chart-area .chart-box .chart-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+section.dashboard .statistic .cards .card .chart-area .chart-box .chart-center h4 {
+  font-size: var(--f4);
+  font-family: var(--semi-bold);
+  color: var(--white);
+}
+
+section.dashboard .statistic .cards .card .chart-area .chart-box .chart-center span {
+  font-size: var(--f1);
+  color: var(--white);
+  font-family: var(--light);
+}
+
+section.dashboard .statistic .cards .card .chart-area .legend {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: var(--light);
+}
+
+section.dashboard .statistic .cards .card .chart-area .legend .legend-item {
+  display: flex;
+  align-items: center;
+  font-size: var(--f2);
+  color: var(--white);
+  font-family: var(--light);
+}
+
+section.dashboard .statistic .cards .card .chart-area .legend .legend-item .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+section.dashboard .statistic .cards .card .chart-area .legend .legend-item .green {
+  background: var(--green);
+}
+
+section.dashboard .statistic .cards .card .chart-area .legend .legend-item .blue {
+  background: var(--violet);
+}
+
+section.dashboard .statistic .cards .card .chart-area .legend .legend-item .orange {
+  background: var(--vivid-orange);
+}
+
+section.dashboard .statistic .cards .card .chart-area .legend .legend-item .red {
+  background: var(--red);
+}
+
+section.dashboard .welcome .select .selected {
+  background-color: transparent;
+  width: 100%;
+  border: 1px solid var(--grey-soft);
+  color: var(--white);
+  font-family: var(--light);
+  font-size: var(--f2);
+}
+
+section.dashboard .welcome .select .selected svg {
+  fill: var(--white);
+  margin: 0 10px 0 0;
+}
+
+section.dashboard .welcome .select .selected.active svg {
+  transform: none !important;
+}
+
+section.dashboard .welcome .select .options {
+  left: auto;
+  right: 0;
+  min-width: 170px;
+}
+
+@media screen and (max-width: 1180px) {
+  section.dashboard .statistic .stats .stat {
+    flex: 0 1 calc(33.333% - 13.333px);
+    width: calc(33.333% - 13.333px);
+    max-width: calc(33.333% - 13.333px);
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  section.dashboard .statistic .stats .stat {
+    flex: 1 1 30%;
+  }
+}
+
+@media (max-width: 1040px) {
+  section.dashboard {
+    top: 0;
+    left: 0;
+    margin-top: 115px;
+    width: 100%;
+    min-height: calc(100vh - 115px);
+    padding: 40px 30px;
+    gap: 25px;
+  }
+
+  section.dashboard .welcome .content {
+    max-width: 100%;
+  }
+
+  section.dashboard .statistic .stats {
+    flex-wrap: wrap;
+  }
+
+  section.dashboard .statistic .stats .stat {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 130px;
+  }
+
+  section.dashboard .statistic .cards {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  section.dashboard .statistic .stats .stat {
+    flex: 1 1 45%;
+  }
+  section.dashboard .statistic .stats .stat {
+    flex: 0 1 calc(50% - 10px);
+    width: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  section.dashboard .statistic .stats .stat {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+
+  section.dashboard .welcome .content {
+    max-width: 60%;
+  }
+
+  section.dashboard .statistic .stats .stat {
+    flex: 0 1 100%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+}

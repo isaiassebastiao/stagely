@@ -1,0 +1,173 @@
+section.view {
+  position: relative;
+  top: 60px;
+  left: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 300px);
+  height: calc(100vh - 60px);
+  padding: 30px;
+  overflow-y: auto;
+}
+
+section.view .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+section.view .container .back {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 10px 20px;
+  border: 1px solid var(--grey-soft);
+  color: var(--white);
+  font-size: var(--f2);
+  font-family: var(--semi-bold);
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 0.3;
+}
+
+section.view .container .back:hover {
+  opacity: 0.8;
+}
+
+section.view .container .back svg {
+  width: 15px;
+  height: 15px;
+  margin: 0 10px 0 0;
+  fill: var(--white);
+}
+
+section.view .container .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 30px;
+}
+
+section.view .container .header .photo {
+  background-color: var(--purple-dark);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  margin: 0 20px 0 0;
+}
+
+section.view .container .header .photo h4 {
+  font-family: var(--light);
+  color: var(--violet);
+  font-size: var(--f6);
+}
+
+section.view .container .header h3 {
+  width: 100%;
+  max-width: 400px;
+  color: var(--white);
+  font-family: var(--light);
+  font-size: var(--f4);
+  margin: 0 auto 0 0;
+}
+
+section.view .container .header .status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: var(--f1);
+  font-family: var(--light);
+  text-align: center;
+  width: fit-content;
+}
+
+section.view .container .header .status.pending  {
+  background-color: var(--orange-light);
+  border: 1px solid var(--orange);
+  color: var(--orange-muted);
+}
+
+section.view .container .header .status.progress {
+  background-color: var(--blue-dark);
+  border: 1px solid var(--blue);
+  color: var(--blue-light);
+}
+
+section.view .container .header .status.finished {
+  background-color: var(--green-dark);
+  border: 1px solid var(--green-bright);
+  color: var(--green-light);
+}
+
+section.view .container .info {
+  border: 1px solid var(--grey-soft);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 0 20px;
+  max-width: 700px;
+  overflow: hidden;
+  width: 100%;
+}
+
+section.view .container .info .item {
+  align-items: flex-start;
+  border-right: 1px solid var(--grey-soft);
+  border-bottom: 1px solid var(--grey-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+
+section.view .container .info .item.full-width {
+  grid-column: 1 / -1;
+  border-right: none;
+  border-bottom: none;
+}
+
+section.view .container .info .item:nth-child(even):not(.full-width) {
+  border-right: none;
+}
+
+section.view .container .info .item:nth-child(n + 5) {
+  border-bottom: none;
+}
+
+section.view .container .info .item h4 {
+  color: var(--white);
+  font-family: var(--semi-bold);
+  font-size: var(--f1);
+  margin: 0 0 10px;
+}
+
+section.view .container .info .item p {
+  color: var(--white);
+  font-family: var(--light);
+  font-size: var(--f2);
+}
+
+/* internership's section mods */
+@media (max-width: 1200px) {
+  section.view{
+    top: 115px;
+    left: 0;
+    width: 100%;
+  }
+}

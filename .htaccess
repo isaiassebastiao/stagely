@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /stagely/
+
+# Se não é um arquivo existente
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# E não é um diretório existente
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redireciona para index.php
+
+RewriteRule ^(.\*)$ index.php [L]
+</IfModule>
+
+ErrorDocument 404 /stagely/frontend/pages/erro/

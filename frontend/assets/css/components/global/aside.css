@@ -1,0 +1,422 @@
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 300px;
+  height: 100vh;
+  border-right: 1px solid var(--grey-medium);
+  z-index: 1000;
+  overflow: visible;
+}
+
+aside .logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+  padding: 0 30px;
+  border-bottom: 1px solid var(--grey-medium);
+}
+
+aside .logo img {
+  width: 100px;
+}
+
+aside .logo button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+aside .logo button svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--white);
+}
+
+aside .menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 10px 30px;
+  margin: 20px 0 5px;
+  transition: all 0.3s;
+}
+
+aside .menu a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+aside .menu a svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  fill: var(--white);
+  z-index: 2;
+}
+
+aside .menu a p {
+  font-size: var(--f1);
+  font-family: var(--light);
+  color: var(--white);
+  z-index: 2;
+}
+
+aside .menu a span {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 260px;
+  height: 100%;
+  background-color: var(--black-dark);
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+aside .menu a:hover span,
+aside .menu a.active span {
+  opacity: 1;
+  visibility: visible;
+}
+
+aside .menu .dropdown {
+  width: 100%;
+}
+
+aside .menu .dropdown button.open {
+  all: unset;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+aside .menu .dropdown button.open div {
+  display: flex;
+  align-items: center;
+}
+
+aside .menu .dropdown button.open div svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  fill: var(--white);
+  z-index: 2;
+}
+
+aside .menu .dropdown button.open div p {
+  font-size: var(--f1);
+  font-family: var(--light);
+  color: var(--white);
+  z-index: 2;
+}
+
+aside .menu .dropdown button.open svg.chevron-icon {
+  width: 12px;
+  height: 12px;
+  fill: var(--white);
+  margin-left: auto;
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+aside .menu .dropdown .options {
+  display: none;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+
+aside .menu .dropdown .options.active {
+  display: flex;
+}
+
+aside .menu .dropdown .options a span {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 260px;
+  height: 100%;
+  background-color: var(--black-dark);
+  border-radius: 12px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+aside .menu .dropdown .options a:hover span,
+aside .menu .dropdown .options a.active span {
+  opacity: 1;
+  visibility: visible;
+}
+
+aside .menu .dropdown .options a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0 10px 30px;
+}
+
+aside .menu .dropdown .options a p {
+  font-size: var(--f1);
+  font-family: var(--light);
+  color: var(--white);
+  z-index: 2;
+}
+
+aside .menu .dropdown button.open.active svg.chevron-icon {
+  transform: rotate(180deg);
+}
+
+aside .help {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+  padding: 0 30px;
+  border-top: 1px solid var(--grey-medium);
+}
+
+aside .help a p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--f1);
+  font-family: var(--light);
+  color: var(--white);
+}
+
+aside .help a svg {
+  display: none;
+  width: 20px;
+  height: 20px;
+  fill: var(--white);
+}
+
+aside.collapsed {
+  width: 60px;
+}
+
+aside.collapsed .logo {
+  padding: 0;
+  justify-content: center;
+  margin-right: 0;
+}
+
+aside.collapsed .logo img {
+  display: none;
+}
+
+aside.collapsed .menu {
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+
+aside.collapsed .menu a {
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+aside.collapsed .menu a svg {
+  margin-right: 0;
+  position: relative;
+  z-index: 2;
+}
+
+aside.collapsed .menu a span {
+  width: 46px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+aside.collapsed .menu .dropdown button.open {
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+aside.collapsed .menu .dropdown button.open div svg {
+  margin-right: 0;
+  position: relative;
+}
+
+aside.collapsed .menu a p,
+aside.collapsed .menu .dropdown button.open div p {
+  display: none;
+}
+
+aside.collapsed .menu .dropdown button.open svg.chevron-icon {
+  display: none;
+}
+
+aside.collapsed .help {
+  padding: 0 10px;
+}
+
+aside.collapsed .help a p {
+  display: none;
+  margin: 0;
+}
+aside.collapsed .help a svg {
+  display: flex;
+}
+
+aside.collapsed ~ header {
+  left: 60px !important;
+  width: calc(100% - 60px) !important;
+}
+
+aside.collapsed ~ section {
+  left: 60px !important;
+  width: calc(100% - 60px) !important;
+}
+
+aside.collapsed .menu a::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-size: var(--f1);
+  font-family: var(--light);
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translateY(-50%) translateX(-4px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+aside.collapsed .menu a:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+aside.collapsed .menu .item:hover::after {
+  opacity: 0;
+  visibility: hidden;
+}
+
+aside.collapsed .menu .dropdown button.open::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-size: var(--f1);
+  font-family: var(--light);
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translateY(-50%) translateX(-4px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+aside.collapsed .menu .dropdown button.open:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+aside.collapsed .menu .dropdown button.open.active::after {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none;
+}
+
+aside.collapsed .menu .dropdown {
+  position: relative;
+}
+
+aside.collapsed .menu .dropdown .options {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--black-dark);
+  border-radius: 10px;
+  padding: 5px 0 5px 0;
+  width: max-content;
+  z-index: 10000;
+}
+
+aside.collapsed .menu .dropdown .options.active {
+  display: flex;
+}
+aside.collapsed .menu .dropdown .options a p {
+  display: block;
+  color: var(--grey-light);
+  font-family: var(--light);
+}
+
+aside.collapsed .menu .dropdown .options a p:hover {
+  color: var(--white);
+}
+aside.collapsed .menu .dropdown .options a span {
+  visibility: hidden;
+  opacity: 0;
+}
+
+aside.collapsed .menu .dropdown .options a {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 12px 18px;
+}
+
+aside .menu .dropdown .options .item.active p {
+  color: var(--white);
+  font-family: var(--light);
+}
+
+@media screen and (max-width: 1040px) {
+  aside {
+    display: none;
+  }
+
+  aside.collapsed ~ header,
+  aside.collapsed ~ section {
+    left: 0 !important;
+    width: 100% !important;
+  }
+}

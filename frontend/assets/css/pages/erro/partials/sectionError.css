@@ -1,0 +1,120 @@
+section.error {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 30px;
+  background: linear-gradient(-45deg, var(--violet), var(--purple-dark), var(--black-dark), var(--violet));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  overflow: hidden;
+}
+
+section.error::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 5, 30, 0.3);
+  backdrop-filter: blur(16px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+section.error .container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border-radius: 25px;
+  max-width: 500px;
+  padding: 50px;
+}
+
+section.error .logo {
+  width: 100%;
+  margin: 0 0 30px ;
+  max-width: 170px;
+}
+
+section.error h1 {
+  font-size: var(--f5);
+  font-family: var(--semi-bold);
+  color: var(--white);
+  margin: 6px 0;
+  line-height: 1.3;
+}
+
+section.error .message {
+  font-family: var(--light);
+  color: var(--grey-light);
+  font-size: var(--f2);
+  margin: 0 0 30px;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+section.error .back {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--violet), #9370db);
+  color: var(--white);
+  font-size: var(--f2);
+  font-family: var(--semi-bold);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+section.error .back:hover {
+  background: linear-gradient(135deg, #9370db, #a78bfa);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  section.error .error-container {
+    padding: 40px 30px;
+  }
+
+  section.error .error-code {
+    font-size: 80px;
+  }
+
+  section.error h1 {
+    font-size: 28px;
+  }
+
+  section.error .error-message {
+    font-size: 14px;
+  }
+
+  section.error .btn-back {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+}

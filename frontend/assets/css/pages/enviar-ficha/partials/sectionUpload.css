@@ -1,0 +1,156 @@
+section.upload {
+  position: relative;
+  top: 60px;
+  left: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 300px);
+  height: calc(100vh - 60px);
+  padding: 30px;
+  overflow-y: auto;
+}
+
+section.upload form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+section.upload form .icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--purple-dark);
+  border-radius: 100%;
+  margin: 0 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.upload form .icon svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--violet);
+}
+
+section.upload form .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+section.upload form .header h1 {
+  font-size: var(--f3);
+  font-family: var(--semi-bold);
+  margin: 6px 0;
+  color: var(--white);
+}
+
+section.upload form .header p {
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--white);
+  line-height: 1.5;
+  text-align: center;
+  max-width: 313px;
+  margin: 0 0 30px;
+}
+
+section.upload form .upload-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px dashed var(--grey-medium);
+  border-radius: 10px;
+  padding: 28px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+section.upload form .upload-box:hover {
+  border-color: var(--violet);
+}
+
+section.upload form .upload-box svg {
+  width: 26px;
+  height: 26px;
+  fill: var(--grey-light);
+}
+
+section.upload form .upload-box span {
+  font-size: var(--f2);
+  font-family: var(--light);
+  color: var(--grey-light);
+  text-align: center;
+}
+
+section.upload form input[type='file'] {
+  display: none;
+}
+
+section.upload form button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  margin: 15px 0 0 0;
+  background-color: var(--violet);
+  color: var(--white);
+  font-size: var(--f2);
+  font-family: var(--semi-bold);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+section.upload form button:hover {
+  opacity: 0.8;
+}
+
+section.upload form button.loading {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+section.upload form button.loading span {
+  opacity: 1;
+  visibility: visible;
+}
+
+section.upload form button.loading p {
+  opacity: 0;
+  visibility: hidden;
+}
+
+section.upload form button span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--white);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  animation: 1s spin infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
